@@ -1,8 +1,8 @@
-function App() {
-
+import { Header } from './Header.jsx'
+function App () {
   return (
     <>
-     <h1 className='text-center'>Hello world!</h1>
+      <Header />
     </>
   )
 }
