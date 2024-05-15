@@ -8,7 +8,7 @@ export const Header = () => {
         <p>Dark Mode</p>
         <label htmlFor='darkmode' className='bg-Toggle w-12 h-6 rounded-full cursor-pointer p-[2px] relative'>
           <input id='darkmode' type='checkbox' className='sr-only peer' />
-          <div className='w-12 h-6 rounded-full cursor-pointer absolute top-0 left-0 peer-checked:bg-Toggle-Gradient' />
+          <div className='w-full h-full rounded-full cursor-pointer absolute top-0 left-0 peer-checked:bg-Toggle-Gradient' />
           <div className='w-5 h-5 bg-Light-Grayish-Blue rounded-full peer-checked:translate-x-6  peer-checked:bg-Very-Dark-Blue transition-all' />
         </label>
       </div>
