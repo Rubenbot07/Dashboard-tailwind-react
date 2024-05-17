@@ -1,10 +1,9 @@
 import data from '../data/data.json'
 import { OverviewCard } from './OverviewCard'
 
-console.log(data.overview)
 export const OverviewContainer = () => {
   return (
-    <section>
+    <section className='grid gap-4'>
       {
         data.overview.map((item) => {
           return (
@@ -15,6 +14,7 @@ export const OverviewContainer = () => {
               aundienceType={item.audienceType}
               today={item.today}
               network={item.network}
+              isUp={item.isUp}
             />
           )
         })
