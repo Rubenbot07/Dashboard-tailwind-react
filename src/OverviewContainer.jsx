@@ -10,8 +10,8 @@ export const OverviewContainer = () => {
             <OverviewCard
               key={item.id}
               user={item.user}
-              aundience={item.audience}
-              aundienceType={item.audienceType}
+              audience={item.audience}
+              audienceType={item.audienceType}
               today={item.today}
               network={item.network}
               isUp={item.isUp}
