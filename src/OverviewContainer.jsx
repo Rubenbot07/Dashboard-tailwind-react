@@ -3,7 +3,7 @@ import { OverviewCard } from './OverviewCard'
 
 export const OverviewContainer = () => {
   return (
-    <section className='grid gap-4'>
+    <section className='grid w-screen gap-6 -m-9 mx-auto'>
       {
         data.overview.map((item) => {
           return (
