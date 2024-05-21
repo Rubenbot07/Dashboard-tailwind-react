@@ -18,15 +18,15 @@ const networkColors = {
   YouTube: 'bg-YouTube'
 }
 
-export const OverviewCard = ({ user, network, audience, audienceType, today, isUp }) => {
-  const formatNumber = (number) => {
-    if (number > 9999) {
-      return ((number / 1000).toFixed(0) + 'k')
-    } else {
-      return number
-    }
+const formatNumber = (number) => {
+  if (number > 9999) {
+    return ((number / 1000).toFixed(0) + 'k')
+  } else {
+    return number
   }
+}
 
+export const OverviewCard = ({ user, network, audience, audienceType, today, isUp }) => {
   return (
     <article className='bg-Light-Grayish-Blue dark:bg-Dark-Desaturated-Blue w-[80%] max-w-80 h-[216px] rounded-md mx-auto grid pt-6 pb-4 relative overflow-hidden text-center'>
       <div className={`w-full h-1 ${networkColors[network]} absolute`} />
@@ -48,16 +48,16 @@ export const OverviewCard = ({ user, network, audience, audienceType, today, isU
 
 export const OverviewTodayContainer = ({ network, stats, statsType, porcentage, isUp }) => {
   return (
-    <article>
-      <div>
-        <span>{statsType}</span>
-        <span>{stats}</span>
+    <article className='bg-Light-Grayish-Blue dark:bg-Dark-Desaturated-Blue flex justify-between w-[80%] h-[130px] max-w-80 rounded-md mx-auto p-6'>
+      <div className='flex flex-col justify-between'>
+        <p className='text-xs text-Dark-Grayish-Blue dark:text-Desaturated-Blue font-bold'>{statsType}</p>
+        <p className='text-Very-Dark-Blue dark:text-Light-Grayish-Blue text-4xl font-bold'>{formatNumber(stats)}</p>
       </div>
-      <div>
+      <div className='flex flex-col items-center justify-between'>
         <img src={networkLogos[network]} alt={`${network}-logo`} />
-        <div>
+        <div className='flex items-center gap-1'>
           <img src={isUp ? arrowUp : arrowDown} alt='arrow icon' />
-          <span>{`${porcentage}%`}</span>
+          <span className={`text-sm font-bold ${!isUp ? 'text-Bright-Red' : 'text-Lime-Green'}`}>{`${porcentage}%`}</span>
         </div>
       </div>
     </article>

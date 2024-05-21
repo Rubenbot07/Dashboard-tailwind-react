@@ -3,7 +3,7 @@ import { OverviewCard, OverviewTodayContainer } from './OverviewCard'
 
 export const OverviewContainer = () => {
   return (
-    <section className='grid w-screen gap-6 -m-9 mx-auto'>
+    <section className='grid w-screen gap-6 -m-9 mx-auto pb-6'>
       {
         data.overview.map((item) => {
           return (
@@ -19,8 +19,9 @@ export const OverviewContainer = () => {
           )
         })
       }
+      <h2 className='text-Dark-Grayish-Blue dark:text-Desaturated-Blue text-xl font-bold mx-auto w-[80%] max-w-80'>Overview - Today</h2>
       {
-        data.overviewToday.map((item) => {
+        data['overview-today'].map((item) => {
           return (
             <OverviewTodayContainer
               key={item.id}
