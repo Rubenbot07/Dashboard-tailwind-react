@@ -28,7 +28,7 @@ const formatNumber = (number) => {
 
 export const OverviewCard = ({ user, network, audience, audienceType, today, isUp }) => {
   return (
-    <article className='bg-Light-Grayish-Blue dark:bg-Dark-Desaturated-Blue w-[80%] max-w-80 h-[216px] rounded-md mx-auto grid pt-6 pb-4 relative overflow-hidden text-center'>
+    <article className='bg-Light-Grayish-Blue dark:bg-Dark-Desaturated-Blue grid w-[80%] max-w-80 h-[216px] rounded-md mx-auto pt-6 pb-4 relative overflow-hidden text-center xl:min-w-60'>
       <div className={`w-full h-1 ${networkColors[network]} absolute`} />
       <div className='flex gap-2 items-center justify-center mb-4'>
         <img src={networkLogos[network]} alt={`${network}-logo`} />
@@ -46,9 +46,9 @@ export const OverviewCard = ({ user, network, audience, audienceType, today, isU
   )
 }
 
-export const OverviewTodayContainer = ({ network, stats, statsType, porcentage, isUp }) => {
+export const OverviewTodayCard = ({ network, stats, statsType, porcentage, isUp }) => {
   return (
-    <article className='bg-Light-Grayish-Blue dark:bg-Dark-Desaturated-Blue flex justify-between w-[80%] h-[130px] max-w-80 rounded-md mx-auto p-6'>
+    <article className='bg-Light-Grayish-Blue dark:bg-Dark-Desaturated-Blue flex justify-between w-[80%] h-[130px] max-w-80 rounded-md mx-auto p-6 md:min-w-52'>
       <div className='flex flex-col justify-between'>
         <p className='text-xs text-Dark-Grayish-Blue dark:text-Desaturated-Blue font-bold'>{statsType}</p>
         <p className='text-Very-Dark-Blue dark:text-Light-Grayish-Blue text-4xl font-bold'>{formatNumber(stats)}</p>
