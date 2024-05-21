@@ -1,5 +1,5 @@
 import data from '../data/data.json'
-import { OverviewCard } from './OverviewCard'
+import { OverviewCard, OverviewTodayContainer } from './OverviewCard'
 
 export const OverviewContainer = () => {
   return (
@@ -14,6 +14,20 @@ export const OverviewContainer = () => {
               audienceType={item.audienceType}
               today={item.today}
               network={item.network}
+              isUp={item.isUp}
+            />
+          )
+        })
+      }
+      {
+        data.overviewToday.map((item) => {
+          return (
+            <OverviewTodayContainer
+              key={item.id}
+              network={item.network}
+              stats={item.stats}
+              statsType={item.statsType}
+              porcentage={item.porcentage}
               isUp={item.isUp}
             />
           )

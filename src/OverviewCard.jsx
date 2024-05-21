@@ -37,10 +37,28 @@ export const OverviewCard = ({ user, network, audience, audienceType, today, isU
       <p className='font-bold text-6xl text-Very-Dark-Blue dark:text-Light-Grayish-Blue'>{formatNumber(audience)}</p>
       <p className='uppercase text-xs text-Dark-Grayish-Blue dark:text-Desaturated-Blue tracking-[5px]'>{audienceType}</p>
       <div className='w-max-content flex items-center justify-center gap-1'>
-        <img className='' src={isUp ? arrowUp : arrowDown} alt='arrow up icon' />
+        <img className='' src={isUp ? arrowUp : arrowDown} alt='arrow icon' />
         <span className={`text-sm font-bold ${!isUp ? 'text-Bright-Red' : 'text-Lime-Green'}`}>
           {`${today} Today`}
         </span>
+      </div>
+    </article>
+  )
+}
+
+export const OverviewTodayContainer = ({ network, stats, statsType, porcentage, isUp }) => {
+  return (
+    <article>
+      <div>
+        <span>{statsType}</span>
+        <span>{stats}</span>
+      </div>
+      <div>
+        <img src={networkLogos[network]} alt={`${network}-logo`} />
+        <div>
+          <img src={isUp ? arrowUp : arrowDown} alt='arrow icon' />
+          <span>{`${porcentage}%`}</span>
+        </div>
       </div>
     </article>
   )
